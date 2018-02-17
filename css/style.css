@@ -4,3 +4,35 @@ body {
     background-image: url("../images/background.jpeg");
     background-size: cover;
 }
+.btn-game {
+    position:absolute;
+	width:200px;
+    height:200px;
+    margin: 100px;
+    border: solid red;
+}
+#btn-red {
+	top:0;
+	left:0;
+	background-color: rgb(233, 65, 65);
+    border-radius:100% 0 0 0;
+}
+#btn-green {
+	top:0;
+	left:50%;
+	background-color: rgb(48, 150, 48);
+    border-radius:0 100% 0 0;
+}
+#btn-yellow {
+	top:50%;
+	left:50%;
+	background-color:yellow;
+    border-radius:0 0 100% 0;
+}
+#btn-blue {
+	top:50%;
+	left:0;
+	background-color: blue;
+    border-radius:0 0 0 100%;
+}
+
