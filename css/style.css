@@ -1,4 +1,6 @@
 body {
     background-color: black;
-
+    margin: 0 auto;
+    background-image: url("../images/background.jpeg");
+    background-size: cover;
 }
