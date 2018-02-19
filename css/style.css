@@ -4,18 +4,28 @@ body {
     background-image: url("../images/background.jpeg");
     background-size: cover;
 }
+.btn-container {
+	text-align: center;
+	width: 500px;
+	height: 500px;
+}
 .btn-game {
     position:absolute;
 	width:200px;
     height:200px;
-    margin: 100px;
-    border: solid red;
+    margin: 10px;
+	border: 10px solid rgb(122, 113, 113);
+
 }
 #btn-red {
 	top:0;
-	left:0;
+	left: 39%;
 	background-color: rgb(233, 65, 65);
-    border-radius:100% 0 0 0;
+	border-radius:100% 0 0 0;
+}
+#btn-red:hover {
+	background-color: rgb(233, 111, 111);
+	cursor: pointer;
 }
 #btn-green {
 	top:0;
@@ -23,16 +33,39 @@ body {
 	background-color: rgb(48, 150, 48);
     border-radius:0 100% 0 0;
 }
+#btn-green:hover {
+	background-color: rgb(91, 184, 91);
+	cursor: pointer;
+}
 #btn-yellow {
-	top:50%;
+	top:22%;
 	left:50%;
-	background-color:yellow;
+	background-color:rgb(218, 218, 60);
     border-radius:0 0 100% 0;
 }
+#btn-yellow:hover {
+	background-color: rgb(240, 240, 175);
+	cursor: pointer;
+}
 #btn-blue {
-	top:50%;
-	left:0;
-	background-color: blue;
+	top:22%;
+	left: 39%;
+	background-color: rgb(60, 60, 235);
     border-radius:0 0 0 100%;
+}
+#btn-blue:hover {
+	background-color: rgb(124, 124, 238);
+	cursor: pointer;
+}
+h1 {
+	color: white;
+	text-align: center;
+}
+button {
+	height: 200px;
+	width: 200px;
+	background-color: rgb(233, 65, 65);
+	border-radius:100% 0 0 0;
+	cursor: pointer;
 }
 
