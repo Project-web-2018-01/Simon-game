@@ -1,69 +1,36 @@
+* {
+	box-sizing: border-box;
+}
 body {
-    background-color: black;
+	background-color: black;
+	color: white;
     margin: 0 auto;
     background-image: url("../images/background.jpeg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100vh;
-}
-.flex-container {
-	display: flex;
-	flex-wrap: wrap;
+	text-align: center;
 	justify-content: center;
 }
-
-.btn-container {
-	text-align: center;
-}
-.btn-game {
-	width:200px;
-    height:200px;
-    margin: 10px;
-	border: 10px solid rgb(122, 113, 113);
-
-}
-#btn-red {
-	background-color: rgb(233, 65, 65);
-	border-radius:100% 0 0 0;
-}
-#btn-red:hover {
-	background-color: rgb(233, 111, 111);
+.btn {
+	height: 48px;
+	width: 48px;
 	cursor: pointer;
+	opacity: 0.5;
 }
-#btn-green {
-	background-color: rgb(48, 150, 48);
-    border-radius:0 0 0 100%;
+#red {
+	background-color: red;
 }
-#btn-green:hover {
-	background-color: rgb(91, 184, 91);
-	cursor: pointer;
+#blue {
+	background-color: blue;
 }
-#btn-yellow {
-	background-color:rgb(218, 218, 60);
-    border-radius:0 0 100% 0;
+#yellow {
+	background-color: gold;
 }
-#btn-yellow:hover {
-	background-color: rgb(240, 240, 175);
-	cursor: pointer;
-}
-#btn-blue {
-	background-color: rgb(60, 60, 235);
-    border-radius:0 100% 0 0;
-}
-#btn-blue:hover {
-	background-color: rgb(124, 124, 238);
-	cursor: pointer;
-}
-body h1 {
-	margin-top: 10px;
-	color: white;
-	text-align: center;
-}
-button {
-	height: 200px;
-	width: 200px;
-	background-color: rgb(233, 65, 65);
-	border-radius:100% 0 0 0;
-	cursor: pointer;
+#green {
+	background-color: green;
 }
 
+.opacity {
+	opacity: 1.0;
+}
