@@ -3,6 +3,18 @@ const BLUE = "BLUE";
 const YELLOW = "YELLOW";
 const GREEN = "GREEN";
 
+/*START THE GAME
+$(function(){
+  $(".start-btn").click(function(){
+    console.log("starting the game");
+    //
+  })
+*/
+
+
+//GENERATE SEQUENCE
+
+
 var simon = {
   sendColor: function(color){
     if(simon.sequence.length === 0) {
@@ -36,8 +48,28 @@ var simon = {
     var nextColor = simon.colors[Math.floor(Math.random() * simon.colors.length)];
     simon.sequence.push(nextColor);
     console.log('the sequence ', simon.sequence);
+    $(".display").text(simon.sequence.length - 1)
+    function showSequence() {
+      for(i = 0; i < simon.sequence.length; i++) {
+        simon.sequence[i] 
+      }
+    }
+    
+
+  
   }
+  
+
+  
 };
+function showSequence(){
+  $(".btn").mousedown(function(){
+    $(this).addClass("opacity");
+  });
+  $(".btn").mouseup(function(){
+    $(this).removeClass("opacity");
+  })
+}
 
 
 $(document).ready(function(){
@@ -52,4 +84,14 @@ $(document).ready(function(){
   $(".btn").mouseup(function(){
     $(this).removeClass("opacity");
   })
+
+  
 })
+/*
+  function showSequence() {
+      $("#").addClass("opacity");
+      setTimeout(function(){
+        $("#").removeClass("opacity");
+      }, 5000);
+    }
+*/

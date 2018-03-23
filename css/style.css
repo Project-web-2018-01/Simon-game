@@ -1,6 +1,7 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 body {
 	background-color: black;
 	color: white;
@@ -11,12 +12,21 @@ body {
 	height: 100vh;
 	text-align: center;
 	justify-content: center;
+	font-size: 2.5rem;
+}
+.container {
+	height: 400px;
+	width: 400px;
+	margin: 50px auto;
+	background-color: black;
 }
 .btn {
-	height: 48px;
-	width: 48px;
+	width: 150px;
+	height: 150px;
+	margin: 25px;
 	cursor: pointer;
 	opacity: 0.5;
+	float: left;
 }
 #red {
 	background-color: red;
@@ -26,11 +36,35 @@ body {
 }
 #yellow {
 	background-color: gold;
+	clear: left;
 }
 #green {
 	background-color: green;
 }
+.controls {
+	margin-top: 50px;
+}
+.title {
+	font-family: 'Ultra', serif;
+	letter-spacing: 8px;
 
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+.start-btn, .stop-btn {
+	width: 200px;
+	border: 1px solid black;
+	display:inline-block;
+	padding: 10px 20px;
+	background-color: grey;
+}
+.start-btn:hover, .stop-btn:hover {
+	background-color: rgb(214, 210, 210);
+	cursor: pointer;
+	color: black;
+}
 .opacity {
 	opacity: 1.0;
 }
