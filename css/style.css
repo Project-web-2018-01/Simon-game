@@ -28,17 +28,17 @@ body {
 	opacity: 0.5;
 	float: left;
 }
-#red {
+.red{
 	background-color: red;
 }
-#blue {
+.blue {
 	background-color: blue;
 }
-#yellow {
+.yellow {
 	background-color: gold;
 	clear: left;
 }
-#green {
+.green {
 	background-color: green;
 }
 .controls {

@@ -1,97 +1,116 @@
-const RED = "RED";
-const BLUE = "BLUE";
-const YELLOW = "YELLOW";
-const GREEN = "GREEN";
+// const RED = "RED";
+// const BLUE = "BLUE";
+// const YELLOW = "YELLOW";
+// const GREEN = "GREEN";
 
-/*START THE GAME
-$(function(){
-  $(".start-btn").click(function(){
-    console.log("starting the game");
-    //
+userSeq = [];
+simonSeq = [];
+var id, color, level = 0
+
+var boardSound = [
+  "http://www.pacdv.com/sounds/interface_sound_effects/sound83.wav", //red
+  "http://www.pacdv.com/sounds/interface_sound_effects/sound87.wav", //blue
+  "http://www.pacdv.com/sounds/interface_sound_effects/sound85.wav", //yellow 
+  "http://www.pacdv.com/sounds/interface_sound_effects/sound94.wav" //green   
+];
+
+//START THE GAME
+  $(function(){
+    $(".start-btn").click(function(){
+      console.log("starting the game");
+      simonSequence();
+    })
+    $(".stop-btn").click(function(){
+       console.log("stop the game");
+       resetGame();
+    })
+    $(".btn").click(function(){
+      id = $(this).attr("id");
+      color = $(this).attr("class").split(" ")[1];
+      userSequence();
+      
+      //checking end of sequence
+      if(userSeq.length == simonSeq.length) {
+        level++;
+        userSeq = [];
+        simonSequence();
+      }
+    })
   })
-*/
+//Checking user serq against simon's
+function checkUserSeq() {
+  for(var i =0; i <userSeq.length; i++) {
+    if(userSeq[i] != simonSeq[i]) {
+      return false;
+    }
+  }
+  return true;
+}
 
+//Display error
+function displayError() {
+  console.log('display error');
+  alert("Game over")
+}
+
+//SIMON SEQUENCE
+function simonSequence() {
+  console.log("level to " + level);
+  $(".display").text(level+1);
+  getRandom();
+  var i = 0;
+  var myInterval = setInterval(function() {
+    id = simonSeq[i];
+    color = $("#"+id).attr("class").split(" ")[1];
+    console.log('Simon Id is ' + id + ' and color ' + color)
+    addClassSound(id, color);
+    i++;
+    if(i == simonSeq.length) {
+      clearInterval(myInterval);
+    }
+  }, 1000);
+}
 
 //GENERATE SEQUENCE
+function getRandom() {
+  var random = Math.floor(Math.random() * 4);
+  simonSeq.push(random)
+}
 
-
-var simon = {
-  sendColor: function(color){
-    if(simon.sequence.length === 0) {
-      //start game
-      simon.nextSequence();
-    }else {
-      
-        if(color == simon.sequence[simon.step]) {
-          //go to next step
-          if(simon.step === simon.sequence.length - 1){
-            console.log('sequence complete!');
-            simon.step = 0;
-            simon.nextSequence();
-          }else {
-            simon.step++
-          }
-
-        }else {
-          //game over
-          alert("game over");
-          simon.sequence = [];
-          simon.step = 0;
-        }
-      }
-    console.log("New color: " + color);
-  },
-  sequence: [],
-  colors: [RED, BLUE, YELLOW, GREEN],
-  step: 0,
-  nextSequence: function() {
-    var nextColor = simon.colors[Math.floor(Math.random() * simon.colors.length)];
-    simon.sequence.push(nextColor);
-    console.log('the sequence ', simon.sequence);
-    $(".display").text(simon.sequence.length - 1)
-    function showSequence() {
-      for(i = 0; i < simon.sequence.length; i++) {
-        simon.sequence[i] 
-      }
-    }
-    
-
-  
+//USER SEQUENCE
+function userSequence() {
+  userSeq.push(id);
+  console.log('user id is ' + id + ' and the color is ' + color);
+  addClassSound(id, color);
+  //
+  if(userSeq.length == 20) {
+    alert("You are the winner!");
+    resetGame();
   }
+    
   
+}
 
-  
-};
-function showSequence(){
-  $(".btn").mousedown(function(){
-    $(this).addClass("opacity");
-  });
-  $(".btn").mouseup(function(){
-    $(this).removeClass("opacity");
-  })
+//ADDING OPPACITY
+function addClassSound(id, color) {
+  $("#"+id).addClass("opacity");
+  playSound();
+  setTimeout(function() {
+    $("#"+id).removeClass("opacity");
+  }, 1000);
+}
+
+//PLAY BOARD SOUND
+function playSound() {
+  var sound = new Audio(boardSound[id]);
+  sound.play();
 }
 
 
-$(document).ready(function(){
-  $("#red").click(function(){ simon.sendColor(RED)});
-  $("#blue").click(function(){ simon.sendColor(BLUE)});
-  $("#yellow").click(function(){ simon.sendColor(YELLOW)});
-  $("#green").click(function(){ simon.sendColor(GREEN)});
-
-  $(".btn").mousedown(function(){
-    $(this).addClass("opacity");
-  });
-  $(".btn").mouseup(function(){
-    $(this).removeClass("opacity");
-  })
-
-  
-})
-/*
-  function showSequence() {
-      $("#").addClass("opacity");
-      setTimeout(function(){
-        $("#").removeClass("opacity");
-      }, 5000);
-    }
-*/
+//RESET GAME
+function resetGame() {
+  userSeq = [];
+  simonSeq = [];
+  level = 0;
+  $(".display").text("00");
+}
