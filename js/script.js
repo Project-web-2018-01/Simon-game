@@ -22,7 +22,7 @@ var boardSound = [
     })
     $(".stop-btn").click(function(){
        console.log("stop the game");
-       resetGame();
+       resetGame()
     })
     $(".btn").click(function(){
       id = $(this).attr("id");
@@ -41,17 +41,13 @@ var boardSound = [
 function checkUserSeq() {
   for(var i =0; i <userSeq.length; i++) {
     if(userSeq[i] != simonSeq[i]) {
-      return false;
+      resetGame();
     }
   }
   return true;
 }
 
-//Display error
-function displayError() {
-  console.log('display error');
-  alert("Game over")
-}
+
 
 //SIMON SEQUENCE
 function simonSequence() {
@@ -83,6 +79,16 @@ function userSequence() {
   console.log('user id is ' + id + ' and the color is ' + color);
   addClassSound(id, color);
   //
+  if(!checkUserSeq()){
+    error = true;
+    resetGame();
+  }else if(userSeq.length == simonSeq.length && userSeq.length < 20) {
+    level++;
+    userSeq = [];
+    error = false;
+    console.log("start simon");
+    simonSequence();
+  }
   if(userSeq.length == 20) {
     alert("You are the winner!");
     resetGame();
@@ -109,8 +115,10 @@ function playSound() {
 
 //RESET GAME
 function resetGame() {
+  alert("Game over")
   userSeq = [];
   simonSeq = [];
-  level = 0;
+  level = 1;
   $(".display").text("00");
 }
+
