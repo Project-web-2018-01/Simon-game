@@ -15,8 +15,9 @@ var boardSound = [
 ];
 
 //START THE GAME
-  $(function(){
+  $(function(){ 
     $(".start-btn").click(function(){
+      $("div").removeClass("disable");
       console.log("starting the game");
       simonSequence();
     })
@@ -51,37 +52,39 @@ function checkUserSeq() {
 
 //SIMON SEQUENCE
 function simonSequence() {
+  $(".title").text("Simon's sequence");
   console.log("level to " + level);
   $(".display").text(level+1);
   getRandom();
   var i = 0;
   var myInterval = setInterval(function() {
     id = simonSeq[i];
-    color = $("#"+id).attr("class").split(" ")[1];
+    color = $("#"+id).attr("class").split(" ")[1]
     console.log('Simon Id is ' + id + ' and color ' + color)
     addClassSound(id, color);
     i++;
     if(i == simonSeq.length) {
       clearInterval(myInterval);
     }
-  }, 1000);
+  }, 1500);
 }
 
 //GENERATE SEQUENCE
 function getRandom() {
   var random = Math.floor(Math.random() * 4);
   simonSeq.push(random)
+  console.log("Random number is " + random);
 }
 
 //USER SEQUENCE
 function userSequence() {
+  $(".title").text("Your sequence");
   userSeq.push(id);
   console.log('user id is ' + id + ' and the color is ' + color);
   addClassSound(id, color);
   //
   if(!checkUserSeq()){
     error = true;
-    resetGame();
   }else if(userSeq.length == simonSeq.length && userSeq.length < 20) {
     level++;
     userSeq = [];
@@ -115,10 +118,11 @@ function playSound() {
 
 //RESET GAME
 function resetGame() {
-  alert("Game over")
+  alert('GAME OVER')
   userSeq = [];
   simonSeq = [];
-  level = 1;
+  level = 0;
   $(".display").text("00");
+  $(".btn").addClass("disable");
 }
 

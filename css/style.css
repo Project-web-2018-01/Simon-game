@@ -17,7 +17,7 @@ body {
 .container {
 	height: 400px;
 	width: 400px;
-	margin: 50px auto;
+	margin: 30px auto;
 	background-color: black;
 }
 .btn {
@@ -47,7 +47,7 @@ body {
 .title {
 	font-family: 'Ultra', serif;
 	letter-spacing: 8px;
-
+	text-transform: uppercase;
 }
 p {
 	margin: 0;
@@ -67,4 +67,9 @@ p {
 }
 .opacity {
 	opacity: 1.0;
+}
+
+.disable {
+	background-color: aqua;
+	cursor: not-allowed;
 }
