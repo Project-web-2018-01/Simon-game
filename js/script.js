@@ -93,8 +93,7 @@ function userSequence() {
     level++;
     userSeq = [];
     error = false;
-    simonSequence();
-    console.log("to tutaj") /////  
+    simonSequence(); 
   }
   if(userSeq.length == 20) {
     alert("You are the winner!");
@@ -124,6 +123,7 @@ function resetGame() {
   alert('GAME OVER')
   userSeq = [];
   simonSeq = 0;
+  $(".title").text("Start the game");
   $(".display").text("00");
   $(".btn").addClass("disable");
   console.log('resetuje')
