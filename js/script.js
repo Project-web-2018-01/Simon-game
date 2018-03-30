@@ -1,60 +1,63 @@
-// const RED = "RED";
-// const BLUE = "BLUE";
-// const YELLOW = "YELLOW";
-// const GREEN = "GREEN";
 
-userSeq = [];
-simonSeq = [];
+var userSeq = [];
+var simonSeq = [];
 var id, color, level = 0
 
 var boardSound = [
-  "http://www.pacdv.com/sounds/interface_sound_effects/sound83.wav", //red
-  "http://www.pacdv.com/sounds/interface_sound_effects/sound87.wav", //blue
-  "http://www.pacdv.com/sounds/interface_sound_effects/sound85.wav", //yellow 
-  "http://www.pacdv.com/sounds/interface_sound_effects/sound94.wav" //green   
+  "https://s3.amazonaws.com/freecodecamp/simonSound1.mp3", //red
+  "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3", //blue
+  "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3", //yellow 
+  "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" //green   
 ];
 
 //START THE GAME
   $(function(){ 
     $(".start-btn").click(function(){
+      level = 1;
+      userSeq = [];
+      simonSeq = [];
       $("div").removeClass("disable");
       console.log("starting the game");
-      simonSequence();
+      simonSequence(); 
     })
     $(".stop-btn").click(function(){
        console.log("stop the game");
        resetGame()
     })
     $(".btn").click(function(){
-      id = $(this).attr("id");
-      color = $(this).attr("class").split(" ")[1];
+      id = $(this).attr("id");//
+      color = $(this).attr("class").split(" ")[1];//
       userSequence();
-      
+      //check user sequence
+      if(!checkUserSeq()) {
+        resetGame();
+      }
+
       //checking end of sequence
       if(userSeq.length == simonSeq.length) {
         level++;
         userSeq = [];
         simonSequence();
+        console.log('tutaj')
       }
     })
   })
+
 //Checking user serq against simon's
 function checkUserSeq() {
-  for(var i =0; i <userSeq.length; i++) {
+  for(var i =0; i < userSeq.length; i++) {
     if(userSeq[i] != simonSeq[i]) {
-      resetGame();
+      return false;
     }
   }
   return true;
 }
 
-
-
 //SIMON SEQUENCE
 function simonSequence() {
   $(".title").text("Simon's sequence");
   console.log("level to " + level);
-  $(".display").text(level+1);
+  $(".display").text(level);
   getRandom();
   var i = 0;
   var myInterval = setInterval(function() {
@@ -79,18 +82,19 @@ function getRandom() {
 //USER SEQUENCE
 function userSequence() {
   $(".title").text("Your sequence");
-  userSeq.push(id);
   console.log('user id is ' + id + ' and the color is ' + color);
   addClassSound(id, color);
+  userSeq.push(id);
   //
   if(!checkUserSeq()){
     error = true;
+
   }else if(userSeq.length == simonSeq.length && userSeq.length < 20) {
     level++;
     userSeq = [];
     error = false;
-    console.log("start simon");
     simonSequence();
+    console.log("to tutaj") /////  
   }
   if(userSeq.length == 20) {
     alert("You are the winner!");
@@ -115,14 +119,13 @@ function playSound() {
   sound.play();
 }
 
-
 //RESET GAME
 function resetGame() {
   alert('GAME OVER')
   userSeq = [];
-  simonSeq = [];
-  level = 0;
+  simonSeq = 0;
   $(".display").text("00");
   $(".btn").addClass("disable");
+  console.log('resetuje')
 }
 
