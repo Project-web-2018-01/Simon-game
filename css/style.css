@@ -1,4 +1,90 @@
-body {
-    background-color: black;
+* {
+    box-sizing: border-box;
+}
 
+body {
+	background-color: rgb(164, 164, 164);
+	color: white;
+    margin: 0 auto;
+    background-image: url("../images/background.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	text-align: center;
+	justify-content: center;
+	font-size: 2.5rem;
+}
+.container {
+	height: 400px;
+	width: 400px;
+	margin: 30px auto;
+	background-color: black;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.btn {
+	width: 150px;
+	height: 150px;
+	margin: 25px;
+	cursor: pointer;
+	opacity: 0.5;
+	float: left;
+	border: 1px solid black;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(250, 248, 248, 0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(250, 248, 248, 0.75);
+	box-shadow: 10px 10px 5px 0px rgba(250, 248, 248, 0.75);
+}
+.red{
+	background-color: red;
+}
+.blue {
+	background-color: blue;
+}
+.yellow {
+	background-color: gold;
+	clear: left;
+}
+.green {
+	background-color: green;
+}
+.controls {
+	margin-top: 30px;
+}
+.title {
+	font-family: 'Ultra', serif;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	text-shadow: 4px 4px 2px rgba(0,0,0,0.75);
+}
+p {
+	margin: 0;
+	padding: 0;
+	text-shadow: 4px 4px 2px rgba(0,0,0,0.75);
+}
+.display {
+	text-shadow: 4px 4px 2px rgba(0,0,0,0.75);
+}
+.start-btn, .stop-btn {
+	width: 200px;
+	border: 1px solid black;
+	display:inline-block;
+	padding: 10px 20px;
+	background-color: grey;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.start-btn:hover, .stop-btn:hover {
+	background-color: rgb(214, 210, 210);
+	cursor: pointer;
+	color: black;
+}
+.opacity {
+	opacity: 1.0;
+}
+
+.disable {
+	background-color: aqua;
+	cursor: not-allowed;
 }
