@@ -5,10 +5,10 @@ var simonSeq = [];
 var id, color, level = 0
 
 var boardSound = [
-  "https://s3.amazonaws.com/freecodecamp/simonSound1.mp3", //red
-  "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3", //blue
-  "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3", //yellow 
-  "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" //green   
+  "http://www.pacdv.com/sounds/interface_sound_effects/sound83.wav", //red
+  "http://www.pacdv.com/sounds/interface_sound_effects/sound87.wav", //blue
+  "http://www.pacdv.com/sounds/interface_sound_effects/sound85.wav", //yellow 
+  "http://www.pacdv.com/sounds/interface_sound_effects/sound94.wav", //green   
 ];
 
 //START THE GAME

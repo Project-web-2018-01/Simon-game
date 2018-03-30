@@ -5,7 +5,7 @@
 body {
 	background-color: rgb(164, 164, 164);
 	color: white;
-    margin: 0 auto;
+	margin: 0 auto;
     background-image: url("../images/background.png");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -31,9 +31,12 @@ body {
 	opacity: 0.5;
 	float: left;
 	border: 1px solid black;
-	-webkit-box-shadow: 10px 10px 5px 0px rgba(250, 248, 248, 0.75);
-	-moz-box-shadow: 10px 10px 5px 0px rgba(250, 248, 248, 0.75);
-	box-shadow: 10px 10px 5px 0px rgba(250, 248, 248, 0.75);
+	border-radius: 10%;
+}
+.btn:active{
+	box-shadow: 0 8px 15px 0px #666;
+	transform: translateY(4px);
+	opacity: 1.0;
 }
 .red{
 	background-color: red;
@@ -67,13 +70,17 @@ body {
 }
 .start-btn, .stop-btn {
 	width: 200px;
-	border: 1px solid black;
 	display:inline-block;
 	padding: 5px 10px;
 	background-color: grey;
-	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0 9px #999;
+	-moz-box-shadow: 0 9px #999;
+	box-shadow: 0 9px #999;
+}
+.start-btn:active, .stop-btn:active {
+	box-shadow: 0 9px rgb(62, 62, 62);
+	transform: translateY(4px);
+	opacity: 1.0;
 }
 .start-btn:hover, .stop-btn:hover {
 	background-color: rgb(214, 210, 210);
