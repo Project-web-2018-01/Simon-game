@@ -3,10 +3,10 @@
 }
 
 body {
-	background-color: black;
+	background-color: rgb(164, 164, 164);
 	color: white;
     margin: 0 auto;
-    background-image: url("../images/background.jpeg");
+    background-image: url("../images/background.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100vh;
