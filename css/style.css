@@ -87,11 +87,7 @@ body {
 	text-shadow: none;
 	color: black;
 }
-.footer a {
-	text-decoration: none;
-	color: black;
-	font-weight: bolder;
-}
+
 .opacity {
 	opacity: 1.0;
 }
