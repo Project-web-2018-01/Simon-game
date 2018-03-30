@@ -1,3 +1,4 @@
+//challenge from https://www.freecodecamp.org/challenges/build-a-simon-game
 
 var userSeq = [];
 var simonSeq = [];
@@ -95,7 +96,7 @@ function userSequence() {
     error = false;
     simonSequence(); 
   }
-  if(userSeq.length == 20) {
+  if(userSeq.length == 25) {
     alert("You are the winner!");
     resetGame();
   }

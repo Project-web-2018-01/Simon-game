@@ -12,7 +12,7 @@ body {
 	height: 100vh;
 	text-align: center;
 	justify-content: center;
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 .container {
 	height: 400px;
@@ -49,7 +49,7 @@ body {
 	background-color: green;
 }
 .controls {
-	margin-top: 30px;
+	margin-top: 5px;
 }
 .title {
 	font-family: 'Ultra', serif;
@@ -69,7 +69,7 @@ p {
 	width: 200px;
 	border: 1px solid black;
 	display:inline-block;
-	padding: 10px 20px;
+	padding: 5px 10px;
 	background-color: grey;
 	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -79,6 +79,18 @@ p {
 	background-color: rgb(214, 210, 210);
 	cursor: pointer;
 	color: black;
+}
+.footer {
+	text-align: center;
+	font-size: 0.8rem;
+	margin-top: 25px;
+	text-shadow: none;
+	color: black;
+}
+.footer a {
+	text-decoration: none;
+	color: black;
+	font-weight: bolder;
 }
 .opacity {
 	opacity: 1.0;
